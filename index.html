@@ -3,96 +3,144 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Your Name – Engineering Portfolio</title>
-<style>
-:root{--bg:#000;--surface:#0e0e0f;--line:#1f1f22;--text:#f2f2f2;--muted:#8a8a90;--accent:#4da3ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000}}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{background:var(--bg);color:var(--text);font-family:Inter,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
-.logo{font-weight:700;letter-spacing:.04em}
-nav ul{display:flex;gap:28px;list-style:none;font-size:.9rem;color:var(--muted)}
-nav ul a:hover{color:var(--text)}
-.hero{padding:140px 0 100px}
-.eyebrow{color:var(--accent);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase}
-h1{font-size:clamp(2.8rem,8vw,5.5rem);line-height:1.05;margin:16px 0 24px;letter-spacing:-.03em}
-.hero p{max-width:560px;color:var(--muted);font-size:1.1rem}
-.btns{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
-.btn{padding:12px 24px;border-radius:999px;border:1px solid var(--line);font-size:.9rem;transition:.2s}
-.btn.primary{background:var(--text);color:#000;border-color:var(--text)}
-.btn:hover{border-color:var(--accent);color:var(--accent)}
-.btn.primary:hover{background:var(--accent);color:#000}
-section{padding:80px 0;border-top:1px solid var(--line)}
-h2{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:40px;font-weight:600}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
-.card h3{margin-bottom:12px}
-.card ul{list-style:none;color:var(--muted)}
-.card li{padding:4px 0}
-.job{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}
-.job:last-child{border:0}
-.job .date{color:var(--muted);font-size:.9rem}
-.job h3{font-size:1.15rem}
-.job p{color:var(--muted);margin-top:6px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-.proj{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s}
-.proj:hover{transform:translateY(-6px);border-color:var(--accent)}
-.thumb{aspect-ratio:16/10;background:linear-gradient(135deg,#17171a,#0a0a0b);display:grid;place-items:center;color:#333;font-size:.85rem}
-.proj .body{padding:20px}
-.tag{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
-.proj h3{margin:6px 0}
-.proj p{color:var(--muted);font-size:.9rem}
-footer{padding:60px 0;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:.9rem}
-footer a{color:var(--text);margin:0 10px}
-footer a:hover{color:var(--accent)}
-@media(max-width:640px){nav ul{gap:16px}.job{grid-template-columns:1fr;gap:6px}.hero{padding:90px 0 60px}}
-</style>
+<title>Gavin Faus – Mechanical Engineering Portfolio</title>
+<meta name="description" content="Mechanical engineering student at the University of Denver focused on thermal-fluid analysis, CFD, FEA, and hands-on hardware. Interested in aerospace, biomedical, and renewable energy.">
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav><div class="wrap"><a class="logo" href="#top">YN</a>
-<ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
 
-<header class="hero" id="top"><div class="wrap">
-<div class="eyebrow">Mechanical Engineer</div>
-<h1>Your Name</h1>
-<p>I design, build, and break things. Welcome to my engineering portfolio — projects, internships, and the lessons along the way.</p>
-<div class="btns"><a class="btn primary" href="#projects">View projects</a><a class="btn" href="#contact">Get in touch</a></div>
-</div></header>
+<header class="site-header">
+  <div class="container nav-container">
+    <a href="#top" class="logo">gavin<span class="dot">.</span>faus</a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="Gavin_Faus_Resume.pdf" class="nav-btn" target="_blank" rel="noopener">Resume</a>
+    </nav>
+  </div>
+</header>
 
-<section id="about"><div class="wrap">
-<h2>About</h2>
-<div class="cols">
-<div class="card"><h3>Strengths</h3><ul><li>CAD &amp; design for manufacturing</li><li>Hands-on machining</li><li>Prototyping and testing</li></ul></div>
-<div class="card"><h3>Tools</h3><ul><li>SolidWorks / Fusion 360</li><li>ANSYS / FEA</li><li>Python / MATLAB</li></ul></div>
-<div class="card"><h3>Interests</h3><ul><li>Motorsports</li><li>Aerospace</li><li>Consumer hardware</li></ul></div>
-</div></div></section>
+<main id="top">
 
-<section id="experience"><div class="wrap">
-<h2>Experience</h2>
-<div class="job"><div class="date">2024 – Present</div><div><h3>Company – Role</h3><p>One line on what you designed or owned.</p></div></div>
-<div class="job"><div class="date">Summer 2023</div><div><h3>Company – Intern</h3><p>One line on your impact and results.</p></div></div>
-<div class="job"><div class="date">2022 – 2023</div><div><h3>Student Team – Lead</h3><p>One line on the system you built.</p></div></div>
-</div></section>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-tag">Mechanical Engineering • Thermal • Fluids • Simulation • Hardware</p>
+      <h1>Gavin Faus</h1>
+      <p class="hero-desc">
+        I'm a mechanical engineering student with a passion for <span class="highlight">thermal-fluid sciences, CFD, FEA, and hands-on engineering</span>.
+        I'm especially interested in aerospace, biomedical, and renewable energy.
+      </p>
+      <div class="hero-meta">
+        <div>Location: <span>Denver, CO</span></div>
+        <div>School: <span>University of Denver</span></div>
+        <div>Graduating: <span>Nov 2027</span></div>
+        <div>Minors: <span>Mathematics, Physics</span></div>
+      </div>
+    </div>
+  </section>
 
-<section id="projects"><div class="wrap">
-<h2>Projects</h2>
-<div class="grid">
-<a class="proj" href="#"><div class="thumb">Image</div><div class="body"><div class="tag">Student Team</div><h3>Planetary Gearbox</h3><p>Design and testing of a compact drivetrain.</p></div></a>
-<a class="proj" href="#"><div class="thumb">Image</div><div class="body"><div class="tag">Personal</div><h3>Injection Mold</h3><p>Machined mold for small plastic parts.</p></div></a>
-<a class="proj" href="#"><div class="thumb">Image</div><div class="body"><div class="tag">Student Team</div><h3>Suspension Uprights</h3><p>Topology-optimized, CNC-machined uprights.</p></div></a>
-<a class="proj" href="#"><div class="thumb">Image</div><div class="body"><div class="tag">Internship</div><h3>Project Name</h3><p>Short description of the problem and result.</p></div></a>
-<a class="proj" href="#"><div class="thumb">Image</div><div class="body"><div class="tag">Personal</div><h3>Project Name</h3><p>Short description of the problem and result.</p></div></a>
-<a class="proj" href="#"><div class="thumb">Image</div><div class="body"><div class="tag">Student Team</div><h3>Project Name</h3><p>Short description of the problem and result.</p></div></a>
-</div></div></section>
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm pursuing a B.S. in Mechanical Engineering at the University of Denver, with minors in Mathematics and Physics.
+            My favorite problems sit where heat transfer and fluid mechanics meet real hardware: build a model, test it against
+            reality, then figure out why the two disagree.
+          </p>
+          <p>
+            My projects range from transient thermal FEA and CFD to a candle-powered thermoelectric generator and an autonomous
+            vehicle running custom C++ control code. Each one reinforced how much I enjoy hands-on testing and iterative engineering.
+          </p>
+          <p>
+            Outside of class I help build a race car with DU Time Attack Racing, tutor K-8 students in math, and spend as much
+            time as I can in the Rocky Mountains with the DU Alpine Club.
+          </p>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-box">
+            <h4>Senior Design – Thermal Lead</h4>
+            <p>Leading charger packaging and thermal management for a five-member team.</p>
+          </div>
+          <div class="highlight-box">
+            <h4>DU Time Attack Racing</h4>
+            <p>Helping build a race car for the Pikes Peak International Hill Climb.</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Industries I'm Drawn To</h4>
+            <p>Aerospace, biomedical, and renewable energy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer id="contact"><div class="wrap">
-<p style="margin-bottom:16px">Let’s build something.</p>
-<a href="mailto:you@email.com">Email</a><a href="#">LinkedIn</a><a href="#">Resume</a>
-<p style="margin-top:32px">© 2026 Your Name</p>
-</div></footer>
-</body>
-</html>
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-list">
+
+        <!--
+          To add a photo to any project, put the image in an "images" folder and add this
+          as the FIRST line inside the project-item:
+          <img class="project-media" src="images/your-image.png" alt="Describe the image">
+        -->
+
+        <article class="project-item">
+          <span class="project-tag">Senior Design • In Progress • Sep 2026 – Present</span>
+          <h3>Charger Packaging &amp; Thermal Management</h3>
+          <div class="project-body">
+            <p>
+              Leading mechanical packaging and thermal management for a five-member team: enclosure mounting, airflow paths,
+              ducting, and fan/blower cooling. I define thermal requirements from component heat losses and enclosure conditions,
+              then build verification plans with sensor placement and controlled cooling-fault tests.
+            </p>
+          </div>
+          <div class="project-specs">
+            <span><strong>Role:</strong> Packaging &amp; thermal management lead</span>
+            <span><strong>Focus:</strong> Airflow, ducting, fan/blower cooling, temperature verification</span>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <span class="project-tag">Thermal Analysis • FEA • Heat Transfer • Mar – Jun 2026</span>
+          <h3>Transient Thermal Modeling &amp; Material Identification</h3>
+          <div class="project-body">
+            <p>
+              Built three transient heat-transfer models in Excel, plus a 3D transient thermal FEA model in SOLIDWORKS, to
+              identify an unknown metallic block. I compared aluminum, steel, and tin across convection and radiation models,
+              calibrated surface emissivity, and checked predictions against experimental cooling data.
+            </p>
+          </div>
+          <div class="project-specs">
+            <span><strong>Result:</strong> 1.62% final-temperature error for aluminum, the closest match</span>
+            <span><strong>Calibration:</strong> Emissivity ε ≈ 0.127 via least-squares fitting</span>
+            <span><strong>Tools:</strong> Excel, SOLIDWORKS Simulation</span>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <span class="project-tag">CFD • Fluid Dynamics • Simulation • Jan – Mar 2026</span>
+          <h3>Converging Nozzle CFD Analysis</h3>
+          <div class="project-body">
+            <p>
+              Modeled steady, incompressible oxygen flow through a converging nozzle using SOLIDWORKS Flow Simulation. I
+              analyzed velocity trajectories and static-pressure distributions, then compared the CFD trends with continuity
+              and Bernoulli principles to confirm the results were physically consistent.
+            </p>
+          </div>
+          <div class="project-specs">
+            <span><strong>Boundary conditions:</strong> 2.5 m/s inlet, 1 atm outlet, no-slip walls</span>
+            <span><strong>Observed:</strong> Flow
