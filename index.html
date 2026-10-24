@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gavin Faus | Thermal-Fluids & Simulation Engineering Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Gavin Faus</a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact" class="nav-btn">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-tag">BSME (Exp. Fall/Winter 2027) • University of Denver</div>
+                <h1>Thermal-Fluids & Simulation Engineering</h1>
+                <p>Specializing in Conjugate Heat Transfer (CHT), computational fluid dynamics, finite element analysis, and high-performance thermal management for AI hardware and civil space infrastructure.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Simulations</a>
+                    <a href="https://github.com" target="_blank" class="btn btn-secondary">GitHub Code</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Focus</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Invisible Physics & Core Competency</h3>
+                        <p>Bridging the gap between raw transport phenomena and high-stakes physical hardware. Focused on solving thermal bottlenecks in extreme environments where failure is not an option—from multi-hundred-watt AI accelerator die cooling to spacecraft thermal control systems.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Validation & Methodology</h3>
+                        <p>Moving beyond basic CAD drafting. Utilizing rigorous grid independence studies (Richardson extrapolation), boundary layer $y+$ compliance, and Python-based automated numerical validation to ensure simulation data matches physical reality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Flagship Simulation Projects</h2>
+                <div class="grid-3">
+                    <div class="project-card">
+                        <div class="project-tag">AI Infrastructure</div>
+                        <h3>Direct-to-Chip Liquid Cold Plate CHT</h3>
+                        <p>Designed a high-performance copper parallel micro-channel heat sink for a 1000W+ AI processor die. Modeled conjugate heat transfer in ANSYS Fluent and exported thermal gradients to ANSYS Mechanical for thermal-stress analysis.</p>
+                        <div class="project-tech"><span>ANSYS Fluent</span><span>SolidWorks</span><span>CHT</span></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-tag">Civil Space</div>
+                        <h3>Spacecraft Avionics Thermal Vacuum (TVAC)</h3>
+                        <p>Simulated modular electronics unit (MEU) housing under transient orbital radiation fluxes and vacuum conditions, managing extreme thermal cycling between solar exposure and deep-space eclipse.</p>
+                        <div class="project-tech"><span>Transient Thermal</span><span>FEA</span><span>Radiation</span></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-tag">Biomedical Microfluidics</div>
+                        <h3>Organ-on-a-Chip Thermal Loop</h3>
+                        <p>Modeled low-Reynolds-number micro-channel perfusion and precision PID heating elements to sustain physiological cell culture temperatures at 37°C ± 0.1°C.</p>
+                        <div class="project-tech"><span>Low-Re CFD</span><span>Multiphase</span><span>MATLAB</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Software & Engineering Stack</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Simulation & CAE</h4>
+                        <ul>
+                            <li>ANSYS Fluent (CFD / CHT)</li>
+                            <li>ANSYS Mechanical (FEA)</li>
+                            <li>SOLIDWORKS Flow Simulation</li>
+                            <li>ANSYS Icepak</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Programming & Automation</h4>
+                        <ul>
+                            <li>Python (NumPy, SciPy, Pandas)</li>
+                            <li>MATLAB (Numerical Modeling)</li>
+                            <li>C++ / Arduino IDE</li>
+                            <li>Git & GitHub Version Control</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Core Competencies</h4>
+                        <ul>
+                            <li>Conjugate Heat Transfer</li>
+                            <li>Mesh Independence & Verification</li>
+                            <li>Parametric CAD (SOLIDWORKS)</li>
+                            <li>Thermal-Structural Coupling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section bg-dark text-white">
+            <div class="container text-center">
+                <h2 class="section-title text-white">Let's Build Reliable Systems</h2>
+                <p class="contact-sub">Currently seeking Spring/Summer 2027 internship and full-time opportunities in thermal-fluids engineering, AI hardware cooling, and civil space systems.</p>
+                <a href="mailto:gavin.faus@du.edu" class="btn btn-primary">gavin.faus@du.edu</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Gavin Faus. Built for high-impact simulation engineering.</p>
+        </div>
+    </footer>
+</body>
+</html>
