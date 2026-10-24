@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gavin Faus | Thermal-Fluids & Simulation Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Gavin Faus<span class="dot">.</span></a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Stack</a>
+                <a href="mailto:gavin.faus@du.edu" class="nav-btn">Get in Touch</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-tag">BSME (Exp. Fall/Winter 2027) • University of Denver</div>
+                <h1>Thermal-Fluids & Simulation Engineering</h1>
+                <p class="hero-desc">
+                    Designing robust thermal architectures and high-performance simulation models for 
+                    <span class="highlight">AI hardware infrastructure</span> and <span class="highlight">civil space systems</span>. 
+                    Specializing in Conjugate Heat Transfer (CHT), computational fluid dynamics, and rigorous numerical verification.
+                </p>
+                <div class="hero-meta">
+                    <div><span>Location:</span> Denver, CO</div>
+                    <div><span>Focus:</span> CFD, FEA, CHT, Python Automation</div>
+                    <div><span>Status:</span> Seeking 2027 Internships / Full-Time</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">Background & Philosophy</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            I am a mechanical engineering undergraduate specializing in thermal-fluid sciences, computational fluid dynamics (CFD), and finite element analysis (FEA). My work focuses on solving critical thermal bottlenecks where standard cooling solutions fail—ranging from multi-hundred-watt AI accelerator die cooling to transient spacecraft thermal control.
+                        </p>
+                        <p>
+                            Rather than relying on black-box software assumptions, I prioritize first-principles physical validation, boundary layer mesh compliance ($y+$ optimization), and custom Python/MATLAB automation to verify simulation data against analytical theory.
+                        </p>
+                    </div>
+                    <div class="about-highlights">
+                        <div class="highlight-box">
+                            <h4>Core Target Sectors</h4>
+                            <p>Civil Space (SpaceX, Blue Origin, Sierra Space) & High-Performance AI Infrastructure (NVIDIA, Datacenters).</p>
+                        </div>
+                        <div class="highlight-box">
+                            <h4>Technical Approach</h4>
+                            <p>Rigorous grid independence studies (Richardson extrapolation), CHT coupling, and automated DAQ post-processing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Flagship Simulation Projects</h2>
+                <div class="project-list">
+                    
+                    <div class="project-item">
+                        <div class="project-header-info">
+                            <span class="project-tag">AI Infrastructure</span>
+                            <h3>Direct-to-Chip Liquid Cold Plate CHT & Stress Optimization</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>
+                                Designed a high-performance copper parallel micro-channel heat sink configured for a 1000W+ AI processor die. Modeled conjugate heat transfer in ANSYS Fluent to map out fluid velocity profiles, pressure drops ($\Delta P$), and chip surface temperature hot spots, subsequently exporting thermal gradients into ANSYS Mechanical for thermal-stress deformation analysis.
+                            </p>
+                            <div class="project-specs">
+                                <span><strong>Software:</strong> ANSYS Fluent, ANSYS Mechanical, SolidWorks</span>
+                                <span><strong>Key Metric:</strong> Minimized thermal resistance while keeping pressure drop within pumping constraints.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header-info">
+                            <span class="project-tag">Civil Space</span>
+                            <h3>Spacecraft Avionics Thermal Vacuum (TVAC) Simulation</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>
+                                Developed a transient thermal model for a modular electronics unit (MEU) housing destined for orbital space flight. Applied transient orbital radiation heat fluxes (solar load, planetary albedo, and deep-space IR sink temperatures) to evaluate extreme thermal cycling limits and structural bracket fatigue.
+                            </p>
+                            <div class="project-specs">
+                                <span><strong>Software:</strong> ANSYS Fluent / Thermal, SolidWorks</span>
+                                <span><strong>Key Metric:</strong> Prevented solder joint fatigue under extreme $-150^\circ\text{C}$ to $+120^\circ\text{C}$ vacuum thermal swings.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-header-info">
+                            <span class="project-tag">Biomedical Microfluidics</span>
+                            <h3>Organ-on-a-Chip Precision Thermal Loop</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>
+                                Modeled low-Reynolds-number micro-channel perfusion and integrated micro-heater elements to maintain strict physiological incubation temperatures ($37^\circ\text{C} \pm 0.1^\circ\text{C}$) for cellular cultures, mitigating viscous dissipation gradients across the fluid domain.
+                            </p>
+                            <div class="project-specs">
+                                <span><strong>Software:</strong> MATLAB, ANSYS Fluent (Low-Re Multiphase)</span>
+                                <span><strong>Key Metric:</strong> Achieved steady thermal uniformity across active culture chambers.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Engineering Stack</h2>
+                <div class="stack-grid">
+                    <div class="stack-col">
+                        <h4>Simulation & CAE</h4>
+                        <ul>
+                            <li>ANSYS Fluent (CFD & CHT)</li>
+                            <li>ANSYS Mechanical (FEA)</li>
+                            <li>SOLIDWORKS Flow Simulation</li>
+                            <li>ANSYS Icepak</li>
+                        </ul>
+                    </div>
+                    <div class="stack-col">
+                        <h4>Programming & Math</h4>
+                        <ul>
+                            <li>Python (NumPy, SciPy, Pandas)</li>
+                            <li>MATLAB (Numerical Modeling)</li>
+                            <li>C++ / Arduino IDE</li>
+                            <li>Git & Version Control</li>
+                        </ul>
+                    </div>
+                    <div class="stack-col">
+                        <h4>Core Fundamentals</h4>
+                        <ul>
+                            <li>Conjugate Heat Transfer</li>
+                            <li>Mesh Independence & Verification</li>
+                            <li>Parametric CAD Assemblies</li>
+                            <li>Thermal-Structural Coupling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container text-center">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="contact-desc">
+                    I am actively seeking mechanical engineering roles and internships focused on thermal-fluids, CFD analysis, and high-reliability hardware systems.
+                </p>
+                <div class="contact-actions">
+                    <a href="mailto:gavin.faus@du.edu" class="btn btn-primary">Email Me (gavin.faus@du.edu)</a>
+                    <a href="https://linkedin.com" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Gavin Faus. Built for high-performance engineering.</p>
+            <p class="footer-sub">University of Denver • Mechanical Engineering</p>
+        </div>
+    </footer>
+</body>
+</html>
