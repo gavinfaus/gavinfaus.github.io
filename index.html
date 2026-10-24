@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Gavin Faus – Mechanical Engineering Portfolio</title>
+<title>Gavin Faus | Mechanical Engineering Portfolio</title>
 <meta name="description" content="Mechanical engineering student at the University of Denver focused on thermal-fluid analysis, CFD, FEA, and hands-on hardware. Interested in aerospace, biomedical, and renewable energy.">
 <meta name="theme-color" content="#000000">
 
@@ -13,6 +13,7 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -20,8 +21,8 @@
   <div class="container nav-container">
     <a href="#top" class="logo">gavin<span class="dot">.</span>faus</a>
     <nav class="nav-links">
-      <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
@@ -30,32 +31,151 @@
   </div>
 </header>
 
-<main id="top">
+<!-- Side dots are built automatically by the script at the bottom -->
+<nav class="dots" id="dots" aria-label="Page sections"></nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <p class="hero-tag">Mechanical Engineering • Thermal • Fluids • Simulation • Hardware</p>
-      <h1>Gavin Faus</h1>
-      <p class="hero-desc">
-        I'm a mechanical engineering student with a passion for <span class="highlight">thermal-fluid sciences, CFD, FEA, and hands-on engineering</span>.
-        I'm especially interested in aerospace, biomedical, and renewable energy.
+<main>
+
+  <!-- Full-screen hero. Delete the video tag if you do not have a clip yet. -->
+  <section class="hero-full" id="top" data-title="Home">
+    <video class="bg-media" autoplay muted loop playsinline poster="images/hero.jpg">
+      <source src="videos/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content container">
+      <p class="eyebrow reveal">Mechanical Engineering</p>
+      <h1 class="reveal">Gavin Faus</h1>
+      <p class="hero-desc reveal">
+        Thermal-fluid sciences, CFD, FEA, and hands-on engineering.
+        Interested in aerospace, biomedical, and renewable energy.
       </p>
-      <div class="hero-meta">
-        <div>Location: <span>Denver, CO</span></div>
-        <div>School: <span>University of Denver</span></div>
-        <div>Graduating: <span>Nov 2027</span></div>
-        <div>Minors: <span>Mathematics, Physics</span></div>
+      <div class="hero-actions reveal">
+        <a class="btn-ghost" href="#projects">View Projects</a>
+        <a class="btn-ghost" href="#contact">Contact</a>
+      </div>
+      <div class="hero-meta reveal">
+        <div>Location<span>Denver, CO</span></div>
+        <div>School<span>University of Denver</span></div>
+        <div>Graduating<span>Nov 2027</span></div>
+        <div>Minors<span>Mathematics, Physics</span></div>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#projects" aria-label="Scroll to projects"><span></span></a>
+  </section>
+
+  <!--
+    FEATURED PROJECT PANELS
+    Each panel is one full screen. To add one, copy a whole <section class="panel"> block and change
+    the image, tag, title, text, and link. Only the first panel keeps id="projects".
+  -->
+  <section class="panel" id="projects" data-title="Projects">
+    <img class="bg-media" src="images/thermal-modeling.jpg" alt="" onerror="this.style.display='none'">
+    <div class="panel-content container">
+      <p class="eyebrow reveal">01 • Thermal Analysis • FEA</p>
+      <h2 class="reveal">Transient Thermal Modeling</h2>
+      <p class="panel-text reveal">Identifying an unknown metal from its cooling curve, using three Excel models and a 3D FEA study. Aluminum matched within 1.62% error.</p>
+      <a class="btn-ghost reveal" href="projects/thermal-modeling.html">Learn More</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <img class="bg-media" src="images/nozzle-cfd.jpg" alt="" onerror="this.style.display='none'">
+    <div class="panel-content container">
+      <p class="eyebrow reveal">02 • CFD • Fluid Dynamics</p>
+      <h2 class="reveal">Converging Nozzle CFD</h2>
+      <p class="panel-text reveal">Oxygen flow through a converging nozzle in SOLIDWORKS Flow Simulation, checked against continuity and Bernoulli.</p>
+      <a class="btn-ghost reveal" href="projects/nozzle-cfd.html">Learn More</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <img class="bg-media" src="images/thermoelectric-generator.jpg" alt="" onerror="this.style.display='none'">
+    <div class="panel-content container">
+      <p class="eyebrow reveal">03 • Heat Transfer • Prototyping</p>
+      <h2 class="reveal">Thermoelectric Generator</h2>
+      <p class="panel-text reveal">A Peltier module turning candle heat into motion. The final prototype carried a payload 11 ft against a 6 ft requirement.</p>
+      <a class="btn-ghost reveal" href="projects/thermoelectric-generator.html">Learn More</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <img class="bg-media" src="images/autonomous-vehicle.jpg" alt="" onerror="this.style.display='none'">
+    <div class="panel-content container">
+      <p class="eyebrow reveal">04 • Mechatronics • Controls</p>
+      <h2 class="reveal">Autonomous Transport System</h2>
+      <p class="panel-text reveal">A Teensy 4.1 vehicle with custom C++ control that classifies a payload, avoids obstacles, and delivers it across a 3.8 m course.</p>
+      <a class="btn-ghost reveal" href="projects/autonomous-vehicle.html">Learn More</a>
+    </div>
+  </section>
+
+  <!-- All projects: filterable grid. Add every project here, featured or not. -->
+  <section class="section" id="all-projects">
+    <div class="container">
+      <h2 class="section-title">All Projects</h2>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="simulation">Simulation</button>
+        <button class="filter-btn" data-filter="hardware">Hardware</button>
+        <button class="filter-btn" data-filter="team">Team</button>
+      </div>
+
+      <div class="tile-grid">
+
+        <a class="tile" href="projects/senior-design-thermal.html" data-category="team simulation">
+          <img src="images/senior-design-thermal.jpg" alt="" onerror="this.style.display='none'">
+          <div class="tile-overlay">
+            <span class="tile-tag">Senior Design • In Progress</span>
+            <h3>Charger Packaging &amp; Thermal Management</h3>
+            <p>Enclosure airflow, ducting, and cooling for a five-member team.</p>
+          </div>
+        </a>
+
+        <a class="tile" href="projects/thermal-modeling.html" data-category="simulation">
+          <img src="images/thermal-modeling.jpg" alt="" onerror="this.style.display='none'">
+          <div class="tile-overlay">
+            <span class="tile-tag">Thermal Analysis • FEA</span>
+            <h3>Transient Thermal Modeling &amp; Material Identification</h3>
+            <p>Identifying an unknown metal from its cooling curve.</p>
+          </div>
+        </a>
+
+        <a class="tile" href="projects/nozzle-cfd.html" data-category="simulation">
+          <img src="images/nozzle-cfd.jpg" alt="" onerror="this.style.display='none'">
+          <div class="tile-overlay">
+            <span class="tile-tag">CFD • Fluid Dynamics</span>
+            <h3>Converging Nozzle CFD Analysis</h3>
+            <p>Oxygen flow through a nozzle, checked against Bernoulli.</p>
+          </div>
+        </a>
+
+        <a class="tile" href="projects/thermoelectric-generator.html" data-category="hardware">
+          <img src="images/thermoelectric-generator.jpg" alt="" onerror="this.style.display='none'">
+          <div class="tile-overlay">
+            <span class="tile-tag">Heat Transfer • Prototyping</span>
+            <h3>Thermoelectric Candle-Powered Generator</h3>
+            <p>A Peltier module turning candle heat into motion.</p>
+          </div>
+        </a>
+
+        <a class="tile" href="projects/autonomous-vehicle.html" data-category="hardware">
+          <img src="images/autonomous-vehicle.jpg" alt="" onerror="this.style.display='none'">
+          <div class="tile-overlay">
+            <span class="tile-tag">Mechatronics • Controls</span>
+            <h3>Autonomous Transport &amp; Placement System</h3>
+            <p>Teensy 4.1 vehicle that classifies and moves a payload.</p>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section class="section" id="about">
+  <section class="section" id="about" data-title="About">
     <div class="container">
       <h2 class="section-title">About</h2>
       <div class="about-grid">
-        <div class="about-text">
+        <div class="about-text reveal">
           <p>
             I'm pursuing a B.S. in Mechanical Engineering at the University of Denver, with minors in Mathematics and Physics.
             My favorite problems sit where heat transfer and fluid mechanics meet real hardware: build a model, test it against
@@ -70,9 +190,9 @@
             time as I can in the Rocky Mountains with the DU Alpine Club.
           </p>
         </div>
-        <div class="about-highlights">
+        <div class="about-highlights reveal">
           <div class="highlight-box">
-            <h4>Senior Design – Thermal Lead</h4>
+            <h4>Senior Design: Thermal Lead</h4>
             <p>Leading charger packaging and thermal management for a five-member team.</p>
           </div>
           <div class="highlight-box">
@@ -88,61 +208,183 @@
     </div>
   </section>
 
-  <!-- Projects -->
-  <section class="section" id="projects">
+  <!-- Experience -->
+  <section class="section" id="experience" data-title="Experience">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title">Experience &amp; Activities</h2>
       <div class="project-list">
 
-        <!--
-          To add a photo to any project, put the image in an "images" folder and add this
-          as the FIRST line inside the project-item:
-          <img class="project-media" src="images/your-image.png" alt="Describe the image">
-        -->
-
-        <article class="project-item">
-          <span class="project-tag">Senior Design • In Progress • Sep 2026 – Present</span>
-          <h3>Charger Packaging &amp; Thermal Management</h3>
+        <article class="project-item reveal">
+          <span class="project-tag">Jan 2026 to Present • Denver, CO</span>
+          <h3>University of Denver Time Attack Racing: Member</h3>
           <div class="project-body">
             <p>
-              Leading mechanical packaging and thermal management for a five-member team: enclosure mounting, airflow paths,
-              ducting, and fan/blower cooling. I define thermal requirements from component heat losses and enclosure conditions,
-              then build verification plans with sensor placement and controlled cooling-fault tests.
+              Collaborating with student engineers in weekly development sessions to design and optimize a race car for the
+              Pikes Peak International Hill Climb. I investigated CFD methods in SOLIDWORKS Flow Simulation to support future
+              cooling-system development for high-altitude racing, and wrote a technical brief on high-altitude hypoxia
+              mitigation, including supplemental driver oxygen systems.
             </p>
           </div>
           <div class="project-specs">
-            <span><strong>Role:</strong> Packaging &amp; thermal management lead</span>
-            <span><strong>Focus:</strong> Airflow, ducting, fan/blower cooling, temperature verification</span>
+            <span><strong>Focus:</strong> CFD cooling research, driver oxygen systems, vehicle performance</span>
+            <span><strong>Team highlight:</strong> Competed in the Red Bull Soapbox Race in Denver</span>
           </div>
         </article>
 
-        <article class="project-item">
-          <span class="project-tag">Thermal Analysis • FEA • Heat Transfer • Mar – Jun 2026</span>
-          <h3>Transient Thermal Modeling &amp; Material Identification</h3>
+        <article class="project-item reveal">
+          <span class="project-tag">Jun 2025 to Present • Self-Employed</span>
+          <h3>Math Tutor, K-8</h3>
           <div class="project-body">
             <p>
-              Built three transient heat-transfer models in Excel, plus a 3D transient thermal FEA model in SOLIDWORKS, to
-              identify an unknown metallic block. I compared aluminum, steel, and tin across convection and radiation models,
-              calibrated surface emissivity, and checked predictions against experimental cooling data.
+              I help K-8 students build real confidence in math, focusing on understanding rather than memorization. Sessions
+              are customized to each student's learning style and cover number sense, fractions and ratios, geometry,
+              pre-algebra, and word problems, in person or online.
             </p>
-          </div>
-          <div class="project-specs">
-            <span><strong>Result:</strong> 1.62% final-temperature error for aluminum, the closest match</span>
-            <span><strong>Calibration:</strong> Emissivity ε ≈ 0.127 via least-squares fitting</span>
-            <span><strong>Tools:</strong> Excel, SOLIDWORKS Simulation</span>
           </div>
         </article>
 
-        <article class="project-item">
-          <span class="project-tag">CFD • Fluid Dynamics • Simulation • Jan – Mar 2026</span>
-          <h3>Converging Nozzle CFD Analysis</h3>
+        <article class="project-item reveal">
+          <span class="project-tag">Jan 2026 to Present • Denver, CO</span>
+          <h3>DU Alpine Club: Member</h3>
           <div class="project-body">
             <p>
-              Modeled steady, incompressible oxygen flow through a converging nozzle using SOLIDWORKS Flow Simulation. I
-              analyzed velocity trajectories and static-pressure distributions, then compared the CFD trends with continuity
-              and Bernoulli principles to confirm the results were physically consistent.
+              Year-round mountain expeditions with fellow students, from winter skiing and snowshoeing to summer hiking,
+              camping, and rafting in the Rocky Mountains.
             </p>
           </div>
-          <div class="project-specs">
-            <span><strong>Boundary conditions:</strong> 2.5 m/s inlet, 1 atm outlet, no-slip walls</span>
-            <span><strong>Observed:</strong> Flow
+        </article>
+
+        <article class="project-item reveal">
+          <span class="project-tag">Jul 2023 to Aug 2025 • Littleton, CO</span>
+          <h3>Edge Ice Arena: Front Desk Staff</h3>
+          <div class="project-body">
+            <p>
+              Assisted more than one hundred guests per shift in a fast-paced recreation environment, handling transactions,
+              registrations, and facility scheduling with point-of-sale and booking software.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section" id="skills" data-title="Skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="stack-grid">
+        <div class="stack-col reveal">
+          <h4>Design &amp; Simulation</h4>
+          <ul>
+            <li>SOLIDWORKS</li>
+            <li>SOLIDWORKS Simulation (FEA)</li>
+            <li>SOLIDWORKS Flow Simulation (CFD)</li>
+            <li>ANSYS Mechanical</li>
+            <li>ANSYS Fluent</li>
+          </ul>
+        </div>
+        <div class="stack-col reveal">
+          <h4>Prototyping &amp; Testing</h4>
+          <ul>
+            <li>3D Printing</li>
+            <li>Tensile &amp; Charpy Impact Testing</li>
+            <li>Rockwell Hardness Testing</li>
+            <li>Metallographic Prep &amp; Optical Microscopy</li>
+            <li>Infrared Thermography</li>
+          </ul>
+        </div>
+        <div class="stack-col reveal">
+          <h4>Programming &amp; Data</h4>
+          <ul>
+            <li>MATLAB</li>
+            <li>Python</li>
+            <li>C++ / Arduino / Teensy 4.1</li>
+            <li>Excel</li>
+            <li>Sensors &amp; DAQ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact-section" id="contact" data-title="Contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-desc reveal">
+        I'm looking for engineering opportunities in thermal-fluid analysis, simulation, and hardware development,
+        especially in aerospace, biomedical, and renewable energy. Feel free to reach out.
+      </p>
+      <div class="contact-actions reveal">
+        <a href="mailto:gavinfaus@gmail.com" class="btn-ghost">Email Me</a>
+        <a href="https://www.linkedin.com/in/gavinfaus/" class="btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="Gavin_Faus_Resume.pdf" class="btn-ghost" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <div>© 2026 Gavin Faus</div>
+    <div class="footer-sub">Denver, CO • University of Denver</div>
+  </div>
+</footer>
+
+<script>
+  // Header turns to blur after scrolling
+  const header = document.querySelector('.site-header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 30);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Fade-in on scroll
+  const revealer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        revealer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => revealer.observe(el));
+
+  // Side dots, built from every element with data-title
+  const secs = [...document.querySelectorAll('[data-title]')];
+  const dots = document.getElementById('dots');
+  secs.forEach(s => {
+    const a = document.createElement('a');
+    a.href = '#' + s.id;
+    a.title = s.dataset.title;
+    a.setAttribute('aria-label', s.dataset.title);
+    dots.appendChild(a);
+  });
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        [...dots.children].forEach((d, i) => d.classList.toggle('active', secs[i] === e.target));
+      }
+    });
+  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+  secs.forEach(s => spy.observe(s));
+
+  // Project filter buttons
+  const buttons = document.querySelectorAll('.filter-btn');
+  const tiles = document.querySelectorAll('.tile');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      tiles.forEach(t => {
+        const match = f === 'all' || t.dataset.category.split(' ').includes(f);
+        t.classList.toggle('hidden', !match);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
