@@ -1349,3 +1349,48 @@ tbody tr:hover td {
 .logo:hover {
     color: var(--accent-hover);
 }
+
+/* ===== All Projects: image on top, text below ===== */
+.tile-grid .tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    background: #0e0f12;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.tile-grid .tile::before,
+.tile-grid .tile::after { display: none; }
+.tile-grid .tile:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+.tile-grid .tile img {
+    position: static;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    filter: none;
+    transform: none;
+    background: #000;
+    border-bottom: 1px solid #1d1e24;
+}
+.tile-grid .tile-overlay {
+    position: static;
+    inset: auto;
+    background: none;
+    opacity: 1;
+    transform: none;
+    padding: 18px 20px 22px;
+}
+.tile-grid .tile-overlay p { color: var(--text-secondary); }
+
+/* ===== Featured panels: no background images for now ===== */
+.panel .bg-media { display: none; }
