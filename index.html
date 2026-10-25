@@ -120,6 +120,128 @@
 
       <div class="tile-grid">
 
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gavin Faus | Mechanical Engineering Portfolio</title>
+<meta name="description" content="Mechanical engineering student at the University of Denver focused on simulation and hands-on testing. Interested in aerospace, biomedical, renewable energy, and semiconductors.">
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon-v2.png" sizes="32x32">
+<link rel="apple-touch-icon" href="favicon-v2.png">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-container">
+    <a href="#top" class="logo">GAVIN FAUS</a>
+    <nav class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="Gavin_Faus_Resume.pdf" class="nav-btn" target="_blank" rel="noopener">Resume</a>
+  </div>
+</header>
+
+<!-- Side dots are built automatically by the script at the bottom -->
+<nav class="dots" id="dots" aria-label="Page sections"></nav>
+
+<main>
+
+  <!-- Full-screen hero image -->
+  <section class="hero-full" id="top" data-title="Home">
+    <img class="bg-media" src="images/hero.jpg" alt="" onerror="this.style.display='none'">
+    <div class="hero-content container">
+      <p class="eyebrow reveal">Mechanical Engineering</p>
+      <h1 class="reveal">Gavin Faus</h1>
+      <p class="hero-desc reveal">
+        Mechanical engineering student at the University of Denver focused on simulation and hands-on testing.
+        Interested in aerospace, biomedical, renewable energy, and semiconductors.
+      </p>
+      <div class="hero-actions reveal">
+        <a class="btn-ghost" href="#projects">View Projects</a>
+        <a class="btn-ghost" href="#contact">Contact</a>
+      </div>
+      <div class="hero-meta reveal">
+        <div>Location<span>Denver, CO</span></div>
+        <div>School<span>University of Denver</span></div>
+        <div>Graduating<span>Nov 2027</span></div>
+        <div>Minors<span>Mathematics, Physics</span></div>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#projects" aria-label="Scroll to projects"><span></span></a>
+  </section>
+
+  <!--
+    FEATURED PROJECT PANELS
+    Each panel is one full screen. To add one, copy a whole <section class="panel"> block and change
+    the image, tag, title, text, and link. Only the first panel keeps id="projects".
+  -->
+  <section class="panel" id="projects" data-title="Projects">
+    <img class="bg-media" src="images/thermal-modeling.jpg" alt="" onerror="this.style.display='none'">
+    <div class="panel-content container">
+      <p class="eyebrow reveal">01 • Thermal Analysis • FEA</p>
+      <h2 class="reveal">Transient Thermal Modeling</h2>
+      <p class="panel-text reveal">Identifying an unknown metal from its cooling curve, using three Excel models and a 3D FEA study. Aluminum matched within 1.62% error.</p>
+      <a class="btn-ghost reveal" href="projects/thermal-modeling.html">Learn More</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <img class="bg-media" src="hero.jpg" alt="" onerror="this.style.display='none'">
+    <div class="panel-content container">
+      <p class="eyebrow reveal">02 • CFD • Fluid Dynamics</p>
+      <h2 class="reveal">Converging Nozzle CFD</h2>
+      <p class="panel-text reveal">Oxygen flow through a converging nozzle in SOLIDWORKS Flow Simulation, checked against continuity and Bernoulli.</p>
+      <a class="btn-ghost reveal" href="projects/nozzle-cfd.html">Learn More</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <img class="bg-media" src="images/thermoelectric-generator.jpg" alt="" onerror="this.style.display='none'">
+    <div class="panel-content container">
+      <p class="eyebrow reveal">03 • Heat Transfer • Prototyping</p>
+      <h2 class="reveal">Thermoelectric Generator</h2>
+      <p class="panel-text reveal">A Peltier module turning candle heat into motion. The final prototype carried a payload 11 ft against a 6 ft requirement.</p>
+      <a class="btn-ghost reveal" href="projects/thermoelectric-generator.html">Learn More</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <img class="bg-media" src="images/autonomous-vehicle.jpg" alt="" onerror="this.style.display='none'">
+    <div class="panel-content container">
+      <p class="eyebrow reveal">04 • Mechatronics • Controls</p>
+      <h2 class="reveal">Autonomous Transport System</h2>
+      <p class="panel-text reveal">A Teensy 4.1 vehicle with custom C++ control that classifies a payload, avoids obstacles, and delivers it across a 3.8 m course.</p>
+      <a class="btn-ghost reveal" href="projects/autonomous-vehicle.html">Learn More</a>
+    </div>
+  </section>
+
+  <!-- All projects: filterable grid. Add every project here, featured or not. -->
+  <section class="section" id="all-projects">
+    <div class="container">
+      <h2 class="section-title">All Projects</h2>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="simulation">Simulation</button>
+        <button class="filter-btn" data-filter="hardware">Hardware</button>
+        <button class="filter-btn" data-filter="team">Team</button>
+      </div>
+
+      <div class="tile-grid">
+
         <a class="tile" href="projects/senior-design-thermal.html" data-category="simulation hardware team">
           <img src="images/senior-design-thermal.jpg" alt="" onerror="this.style.display='none'">
           <div class="tile-overlay">
@@ -200,6 +322,218 @@
             <p>Airfoil blades with winglets cut noise by at least 30 dB.</p>
           </div>
         </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about" data-title="About">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm pursuing a B.S. in Mechanical Engineering at the University of Denver, with minors in Mathematics and Physics.
+            I've found fluid dynamics and heat transfer to be some of my favorite courses in MechE. I enjoy combining what I've learned from these classes with hands-on testing.
+          </p>
+          <p>
+            My projects range from transient thermal FEA and CFD to a candle-powered thermoelectric generator and an autonomous
+            vehicle running custom C++ control code. Each one reinforced how much I enjoy hands-on testing and iterative engineering.
+          </p>
+          <p>
+            Outside of class I help build a race car with DU Time Attack Racing, tutor K-8 students in math, and spend as much
+            time as I can in the Rocky Mountains with the DU Alpine Club.
+          </p>
+        </div>
+        <div class="about-highlights reveal">
+          <div class="highlight-box">
+            <h4>Senior Design: Thermal Lead</h4>
+            <p>Leading charger packaging and thermal management for a five-member team.</p>
+          </div>
+          <div class="highlight-box">
+            <h4>DU Time Attack Racing</h4>
+            <p>Helping build a race car for the Pikes Peak International Hill Climb. Work on both the Aerodynamics and Powertrain teams.</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Industries I'm Drawn To</h4>
+            <p>Aerospace, biomedical, renewable energy, and semiconductors.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section" id="experience" data-title="Experience">
+    <div class="container">
+      <h2 class="section-title">Experience &amp; Activities</h2>
+      <div class="project-list">
+
+        <article class="project-item reveal">
+          <span class="project-tag">Jan 2026 to Present • Denver, CO</span>
+          <h3>University of Denver Time Attack Racing: Member</h3>
+          <div class="project-body">
+            <p>
+              Collaborating with student engineers in weekly development sessions to design and optimize a race car for the
+              Pikes Peak International Hill Climb. I investigated CFD methods in SOLIDWORKS Flow Simulation to support future
+              cooling-system development for high-altitude racing, and wrote a technical brief on high-altitude hypoxia
+              mitigation, including supplemental driver oxygen systems.
+            </p>
+          </div>
+          <div class="project-specs">
+            <span><strong>Focus:</strong> CFD cooling research, driver oxygen systems, vehicle performance</span>
+            <span><strong>Team highlight:</strong> Competed in the Red Bull Soapbox Race in Denver</span>
+          </div>
+        </article>
+
+        <article class="project-item reveal">
+          <span class="project-tag">Jun 2025 to Present • Self-Employed</span>
+          <h3>Math Tutor, K-8</h3>
+          <div class="project-body">
+            <p>
+              I help K-8 students build real confidence in math, focusing on understanding rather than memorization. Sessions
+              are customized to each student's learning style and cover number sense, fractions and ratios, geometry,
+              pre-algebra, and word problems, in person or online.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-item reveal">
+          <span class="project-tag">Jan 2026 to Present • Denver, CO</span>
+          <h3>DU Alpine Club: Member</h3>
+          <div class="project-body">
+            <p>
+              Year-round mountain expeditions with fellow students, from winter skiing and snowshoeing to summer hiking,
+              camping, and rafting in the Rocky Mountains.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section" id="skills" data-title="Skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="stack-grid">
+        <div class="stack-col reveal">
+          <h4>Design &amp; Simulation</h4>
+          <ul>
+            <li>SOLIDWORKS (CAD)</li>
+            <li>SOLIDWORKS Simulation (FEA)</li>
+            <li>SOLIDWORKS Flow Simulation (CFD)</li>
+            <li>ANSYS Mechanical (FEA)</li>
+            <li>ANSYS Fluent (CFD)</li>
+          </ul>
+        </div>
+        <div class="stack-col reveal">
+          <h4>Prototyping &amp; Testing</h4>
+          <ul>
+            <li>3D Printing</li>
+            <li>Tensile &amp; Charpy Impact Testing</li>
+            <li>Rockwell Hardness Testing</li>
+            <li>Metallographic Prep &amp; Optical Microscopy</li>
+            <li>Infrared Thermography</li>
+          </ul>
+        </div>
+        <div class="stack-col reveal">
+          <h4>Programming &amp; Data</h4>
+          <ul>
+            <li>MATLAB</li>
+            <li>Python</li>
+            <li>C++ / Arduino / Teensy 4.1</li>
+            <li>Excel</li>
+            <li>Sensors &amp; DAQ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact-section" id="contact" data-title="Contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-desc reveal">
+        I'm looking for engineering opportunities in thermal-fluid analysis, simulation, and hardware development,
+        especially in aerospace, biomedical, renewable energy, and semiconductors. Feel free to reach out.
+      </p>
+      <div class="contact-actions reveal">
+        <a href="mailto:gavinfaus@gmail.com" class="btn-ghost">Email Me</a>
+        <a href="https://www.linkedin.com/in/gavinfaus/" class="btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="Gavin_Faus_Resume.pdf" class="btn-ghost" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <div>© 2026 Gavin Faus</div>
+    <div class="footer-sub">Denver, CO • University of Denver</div>
+  </div>
+</footer>
+
+<script>
+  // Header turns to blur after scrolling
+  const header = document.querySelector('.site-header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 30);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Fade-in on scroll
+  const revealer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        revealer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => revealer.observe(el));
+
+  // Side dots, built from every element with data-title
+  const secs = [...document.querySelectorAll('[data-title]')];
+  const dots = document.getElementById('dots');
+  secs.forEach(s => {
+    const a = document.createElement('a');
+    a.href = '#' + s.id;
+    a.title = s.dataset.title;
+    a.setAttribute('aria-label', s.dataset.title);
+    dots.appendChild(a);
+  });
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        [...dots.children].forEach((d, i) => d.classList.toggle('active', secs[i] === e.target));
+      }
+    });
+  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+  secs.forEach(s => spy.observe(s));
+
+  // Project filter buttons
+  const buttons = document.querySelectorAll('.filter-btn');
+  const tiles = document.querySelectorAll('.tile');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      tiles.forEach(t => {
+        const match = f === 'all' || t.dataset.category.split(' ').includes(f);
+        t.classList.toggle('hidden', !match);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+
 
       </div>
     </div>
