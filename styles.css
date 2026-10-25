@@ -1391,3 +1391,5 @@ a.tile .tile-overlay p { color: #94a3b8 !important; }
 .panel .bg-media, .panel > img { display: none !important; }
 
 .hero-full .bg-media { filter: brightness(0.5) !important; }
+
+a.tile.hidden { display: none !important; }
