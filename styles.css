@@ -1,4 +1,4 @@
-/* Sleek Black Engineering Portfolio Theme, v3 */
+/* Black Engineering Portfolio Theme, v4 (cinematic) */
 :root {
     --bg-primary: #000000;
     --bg-secondary: #0b0b0d;
@@ -24,7 +24,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-snap-type: y proximity;
     background: var(--bg-primary);
 }
 
@@ -49,11 +49,10 @@ img {
 }
 
 a:focus-visible,
-.btn:focus-visible,
+.btn-ghost:focus-visible,
 .filter-btn:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
-    border-radius: 6px;
 }
 
 .container {
@@ -66,16 +65,42 @@ a:focus-visible,
     max-width: 880px;
 }
 
-/* ---------- Header & Navigation ---------- */
+/* ---------- Scroll fade-in (only active when JavaScript runs) ---------- */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+
+.js .reveal.in {
+    opacity: 1;
+    transform: none;
+}
+
+.reveal:nth-child(2) { transition-delay: 0.08s; }
+.reveal:nth-child(3) { transition-delay: 0.16s; }
+.reveal:nth-child(4) { transition-delay: 0.24s; }
+.reveal:nth-child(5) { transition-delay: 0.32s; }
+
+/* ---------- Header: transparent over the hero, blurred after scrolling ---------- */
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    background: rgba(0, 0, 0, 0.8);
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.4rem 0;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background 0.35s var(--ease), border-color 0.35s var(--ease), padding 0.35s var(--ease);
+}
+
+.site-header.scrolled {
+    background: rgba(0, 0, 0, 0.72);
     -webkit-backdrop-filter: saturate(180%) blur(14px);
     backdrop-filter: saturate(180%) blur(14px);
-    border-bottom: 1px solid var(--border-color);
-    z-index: 1000;
-    padding: 1rem 0;
+    border-bottom-color: var(--border-color);
+    padding: 0.9rem 0;
 }
 
 .nav-container {
@@ -83,12 +108,13 @@ a:focus-visible,
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
+    max-width: 1280px;
 }
 
 .logo {
     font-family: var(--font-mono);
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-primary);
     text-decoration: none;
     letter-spacing: -0.02em;
@@ -101,16 +127,18 @@ a:focus-visible,
 
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
 }
 
 .nav-links a {
     position: relative;
     text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    font-weight: 500;
+    color: rgba(245, 245, 247, 0.85);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
     transition: color 0.2s var(--ease);
     white-space: nowrap;
 }
@@ -122,7 +150,7 @@ a:focus-visible,
     bottom: -6px;
     width: 100%;
     height: 1px;
-    background: var(--accent);
+    background: var(--text-primary);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s var(--ease);
@@ -133,95 +161,223 @@ a:focus-visible,
 }
 
 .nav-links a:hover {
-    color: var(--text-primary);
+    color: #fff;
 }
 
 .nav-links .nav-btn {
-    border: 1px solid var(--border-color);
-    padding: 0.4rem 0.95rem;
-    border-radius: 999px;
-    color: var(--text-primary);
-    transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 0.5rem 1.1rem;
+    color: #fff;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease);
 }
 
 .nav-links .nav-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    background: #fff;
+    color: #000;
 }
 
-/* ---------- Hero ---------- */
-.hero {
-    padding: 8rem 0 5.5rem;
+/* ---------- Side dots ---------- */
+.dots {
+    position: fixed;
+    right: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.dots a {
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    background: transparent;
+    transition: background 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.dots a:hover {
+    transform: scale(1.3);
+}
+
+.dots a.active {
+    background: #fff;
+    border-color: #fff;
+}
+
+/* ---------- Full-screen media (hero and project panels) ---------- */
+.hero-full,
+.panel {
     position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    scroll-snap-align: start;
+    background:
+        radial-gradient(70% 60% at 50% 0%, var(--accent-glow), transparent 70%),
+        linear-gradient(180deg, #0a0a0d, #000);
 }
 
-.hero::before {
+.bg-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Dark gradient over the media so white text always reads clearly */
+.hero-full::before,
+.panel::before {
     content: "";
     position: absolute;
-    inset: 0 0 auto 0;
-    height: 460px;
-    background: radial-gradient(60% 100% at 20% 0%, var(--accent-glow), transparent 70%);
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.15) 40%, rgba(0, 0, 0, 0.7) 100%);
     pointer-events: none;
 }
 
-.hero > * {
+.hero-content,
+.panel-content {
     position: relative;
+    z-index: 2;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 }
 
-.hero-tag {
+.eyebrow {
     font-family: var(--font-mono);
-    font-size: 0.76rem;
-    line-height: 1.7;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    margin-bottom: 1.25rem;
+    font-size: 0.74rem;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.4rem;
 }
 
-.hero h1 {
-    font-size: clamp(2.75rem, 8vw, 5rem);
+.hero-full h1 {
+    font-size: clamp(3rem, 11vw, 8rem);
     font-weight: 700;
-    letter-spacing: -0.045em;
-    line-height: 1.02;
-    margin-bottom: 1.5rem;
-    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 1.6rem;
 }
 
-.hero-desc {
-    font-size: 1.15rem;
-    color: var(--text-secondary);
-    max-width: 700px;
-    margin-bottom: 2.5rem;
+.panel h2 {
+    font-size: clamp(2.2rem, 7vw, 5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.05;
+    margin-bottom: 1.4rem;
 }
 
-.highlight {
-    color: var(--text-primary);
-    font-weight: 500;
+.hero-desc,
+.panel-text {
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    color: rgba(245, 245, 247, 0.82);
+    max-width: 620px;
+    margin: 0 auto 2.4rem;
+}
+
+.hero-actions,
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Outlined uppercase button, the signature SpaceX call to action */
+.btn-ghost {
+    display: inline-block;
+    padding: 0.95rem 2.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    background: rgba(0, 0, 0, 0.15);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    text-decoration: none;
+    transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.btn-ghost:hover {
+    background: #fff;
+    border-color: #fff;
+    color: #000;
 }
 
 .hero-meta {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem 2rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--border-color);
+    max-width: 860px;
+    margin: 4.5rem auto 0;
     padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .hero-meta span {
     display: block;
-    margin-top: 0.2rem;
-    font-size: 0.88rem;
-    color: var(--text-primary);
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    color: #fff;
 }
 
-/* ---------- Sections ---------- */
+/* Animated scroll hint at the bottom of the hero */
+.scroll-cue {
+    position: absolute;
+    bottom: 1.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 22px;
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+}
+
+.scroll-cue span {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    width: 3px;
+    height: 7px;
+    margin-left: -1.5px;
+    border-radius: 2px;
+    background: #fff;
+    animation: cue 1.8s ease-in-out infinite;
+}
+
+@keyframes cue {
+    0% { opacity: 1; transform: translateY(0); }
+    70% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 0; transform: translateY(0); }
+}
+
+/* ---------- Regular sections ---------- */
 .section {
-    padding: 5.5rem 0;
+    padding: 6.5rem 0;
     border-top: 1px solid var(--border-color);
+    scroll-snap-align: none;
 }
 
 .section-title {
@@ -229,11 +385,11 @@ a:focus-visible,
     align-items: center;
     gap: 1rem;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.16em;
-    margin-bottom: 2.5rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 2.75rem;
     color: var(--text-secondary);
 }
 
@@ -282,7 +438,6 @@ a:focus-visible,
     font-size: 0.95rem;
     font-weight: 600;
     margin-bottom: 0.4rem;
-    color: var(--text-primary);
 }
 
 .highlight-box p {
@@ -291,7 +446,7 @@ a:focus-visible,
     margin: 0;
 }
 
-/* ---------- Project filters & tiles (home page) ---------- */
+/* ---------- Filters and tiles ---------- */
 .filters {
     display: flex;
     flex-wrap: wrap;
@@ -301,13 +456,13 @@ a:focus-visible,
 
 .filter-btn {
     font-family: var(--font-mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.05em;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
     color: var(--text-secondary);
     background: transparent;
     border: 1px solid var(--border-color);
-    padding: 0.45rem 1rem;
-    border-radius: 999px;
+    padding: 0.55rem 1.1rem;
     cursor: pointer;
     transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
@@ -318,8 +473,8 @@ a:focus-visible,
 }
 
 .filter-btn.active {
-    color: var(--accent);
-    border-color: var(--accent);
+    color: #fff;
+    border-color: #fff;
 }
 
 .tile-grid {
@@ -342,7 +497,7 @@ a:focus-visible,
 }
 
 .tile:hover {
-    border-color: var(--accent);
+    border-color: #fff;
     transform: translateY(-4px);
 }
 
@@ -377,16 +532,16 @@ a:focus-visible,
 
 .tile-tag {
     font-family: var(--font-mono);
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     color: var(--accent-hover);
     font-weight: 600;
     margin-bottom: 0.4rem;
 }
 
 .tile h3 {
-    font-size: 1.1rem;
+    font-size: 1.08rem;
     font-weight: 600;
     line-height: 1.3;
     letter-spacing: -0.01em;
@@ -403,48 +558,46 @@ a:focus-visible,
 .project-list {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1rem;
 }
 
 .project-item {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius);
-    padding: 2rem;
+    padding: 1.5rem 1.75rem;
     overflow: hidden;
-    transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), background 0.25s var(--ease);
+    transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
 }
 
 .project-item:hover {
     border-color: var(--border-hover);
     background: var(--bg-card);
-    transform: translateY(-3px);
 }
 
 .project-tag {
     display: block;
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     line-height: 1.7;
     color: var(--accent);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     font-weight: 600;
     margin-bottom: 0.6rem;
 }
 
 .project-item h3 {
-    font-size: 1.35rem;
+    font-size: 1.1rem;
     font-weight: 600;
     line-height: 1.3;
-    color: var(--text-primary);
-    margin-bottom: 0.9rem;
-    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
 }
 
 .project-body p {
     color: var(--text-secondary);
-    font-size: 0.975rem;
+    font-size: 0.92rem;
     margin-bottom: 1.25rem;
 }
 
@@ -456,7 +609,7 @@ a:focus-visible,
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    font-size: 0.83rem;
+    font-size: 0.82rem;
     font-family: var(--font-mono);
     color: var(--text-secondary);
     border-top: 1px solid var(--border-color);
@@ -467,23 +620,6 @@ a:focus-visible,
 .project-specs span strong {
     color: var(--text-primary);
     font-weight: 500;
-}
-
-#experience .project-list {
-    gap: 1rem;
-}
-
-#experience .project-item {
-    padding: 1.5rem 1.75rem;
-}
-
-#experience .project-item h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.6rem;
-}
-
-#experience .project-body p {
-    font-size: 0.92rem;
 }
 
 /* ---------- Skills ---------- */
@@ -508,7 +644,6 @@ a:focus-visible,
 .stack-col h4 {
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--text-primary);
     margin-bottom: 1.25rem;
     padding-bottom: 0.9rem;
     border-bottom: 1px solid var(--border-color);
@@ -530,6 +665,7 @@ a:focus-visible,
 /* ---------- Contact ---------- */
 .contact-section {
     text-align: center;
+    padding: 8rem 0;
 }
 
 .contact-section .section-title {
@@ -546,48 +682,8 @@ a:focus-visible,
 .contact-desc {
     color: var(--text-secondary);
     max-width: 620px;
-    margin: 0 auto 2.25rem;
+    margin: 0 auto 2.5rem;
     font-size: 1.05rem;
-}
-
-.contact-actions {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-/* ---------- Buttons ---------- */
-.btn {
-    display: inline-block;
-    padding: 0.8rem 1.6rem;
-    border-radius: 999px;
-    font-weight: 500;
-    text-decoration: none;
-    font-size: 0.925rem;
-    transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
-}
-
-.btn-primary {
-    background-color: var(--text-primary);
-    color: #000;
-    border: 1px solid var(--text-primary);
-}
-
-.btn-primary:hover {
-    background-color: var(--accent-hover);
-    border-color: var(--accent-hover);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--text-primary);
-    border: 1px solid var(--border-hover);
-}
-
-.btn-secondary:hover {
-    border-color: var(--accent);
-    color: var(--accent);
 }
 
 /* ---------- Footer ---------- */
@@ -615,7 +711,7 @@ a:focus-visible,
 
 .page-hero {
     position: relative;
-    padding: 5rem 0 2.5rem;
+    padding: 8.5rem 0 2.5rem;
 }
 
 .page-hero::before {
@@ -631,31 +727,67 @@ a:focus-visible,
     position: relative;
 }
 
+/* Full-width cover image behind the project title.
+   Set per page: <section class="page-hero has-cover" style="--cover:url('../images/name.jpg')"> */
+.page-hero.has-cover {
+    min-height: 72vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 3rem;
+    background-image: var(--cover);
+    background-size: cover;
+    background-position: center;
+    background-color: #0a0a0d;
+}
+
+.page-hero.has-cover::before {
+    inset: 0;
+    height: auto;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.35) 40%, #000 100%);
+}
+
+.page-hero.has-cover .container {
+    width: 100%;
+}
+
 .back-link {
     display: inline-block;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--text-secondary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     margin-bottom: 2rem;
     transition: color 0.2s var(--ease);
 }
 
 .back-link:hover {
-    color: var(--accent);
+    color: #fff;
+}
+
+.page-hero .hero-tag {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-hover);
+    margin-bottom: 1.1rem;
 }
 
 .page-hero h1 {
-    font-size: clamp(2rem, 5.5vw, 3.25rem);
+    font-size: clamp(2rem, 5.5vw, 3.5rem);
     font-weight: 700;
-    letter-spacing: -0.035em;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
     line-height: 1.1;
     margin-bottom: 1.25rem;
 }
 
 .page-summary {
     font-size: 1.15rem;
-    color: var(--text-secondary);
+    color: rgba(245, 245, 247, 0.8);
     max-width: 680px;
     margin-bottom: 2rem;
 }
@@ -665,11 +797,11 @@ a:focus-visible,
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem 2rem;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--border-color);
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
     padding-top: 1.25rem;
 }
 
@@ -679,7 +811,7 @@ a:focus-visible,
     font-size: 0.88rem;
     text-transform: none;
     letter-spacing: 0;
-    color: var(--text-primary);
+    color: #fff;
 }
 
 /* Written content */
@@ -771,7 +903,6 @@ a:focus-visible,
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: -0.03em;
-    color: var(--text-primary);
     line-height: 1.1;
     margin-bottom: 0.4rem;
 }
@@ -982,7 +1113,7 @@ tbody tr:hover td {
 }
 
 .project-nav a:hover {
-    border-color: var(--accent);
+    border-color: #fff;
     background: var(--bg-card);
 }
 
@@ -991,7 +1122,7 @@ tbody tr:hover td {
     font-family: var(--font-mono);
     font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     color: var(--text-secondary);
     margin-bottom: 0.35rem;
 }
@@ -1026,23 +1157,20 @@ tbody tr:hover td {
 /* ---------- Tablet ---------- */
 @media (max-width: 960px) {
     .nav-links {
-        gap: 1.1rem;
+        gap: 1.25rem;
     }
-    .nav-links a {
-        font-size: 0.85rem;
+    .dots {
+        display: none;
     }
 }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 768px) {
-    .hero {
-        padding: 5rem 0 3.5rem;
-    }
-    .page-hero {
-        padding: 3rem 0 1.5rem;
+    .site-header {
+        padding: 1rem 0;
     }
     .section {
-        padding: 3.5rem 0;
+        padding: 4rem 0;
     }
     .about-grid,
     .stack-grid {
@@ -1051,6 +1179,7 @@ tbody tr:hover td {
     }
     .hero-meta {
         grid-template-columns: 1fr 1fr;
+        margin-top: 3rem;
     }
     .footer-content {
         flex-direction: column;
@@ -1069,10 +1198,13 @@ tbody tr:hover td {
         display: none;
     }
     .project-item {
-        padding: 1.5rem;
-    }
-    #experience .project-item {
         padding: 1.25rem 1.4rem;
+    }
+    .page-hero {
+        padding: 6.5rem 0 1.5rem;
+    }
+    .page-hero.has-cover {
+        min-height: 60vh;
     }
     .figure-grid {
         grid-template-columns: 1fr;
@@ -1092,10 +1224,11 @@ tbody tr:hover td {
     .tile-grid {
         grid-template-columns: 1fr;
     }
-    .btn {
+    .btn-ghost {
         width: 100%;
         text-align: center;
     }
+    .hero-actions,
     .contact-actions {
         flex-direction: column;
     }
@@ -1104,14 +1237,22 @@ tbody tr:hover td {
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
+        scroll-snap-type: none;
     }
     * {
         transition: none !important;
     }
-    .project-item:hover,
-    .tile:hover {
+    .js .reveal {
+        opacity: 1;
         transform: none;
     }
+    .scroll-cue span {
+        animation: none;
+    }
+    .hero-full video {
+        display: none;
+    }
+    .tile:hover,
     .tile:hover img {
         transform: none;
     }
