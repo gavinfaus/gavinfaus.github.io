@@ -1351,46 +1351,41 @@ tbody tr:hover td {
 }
 
 /* ===== All Projects: image on top, text below ===== */
-.tile-grid .tile {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    min-height: 0;
-    aspect-ratio: auto;
-    background: #0e0f12;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+a.tile {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    background: #0e0f12 !important;
+    border: 1px solid #27282f !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
 }
-.tile-grid .tile::before,
-.tile-grid .tile::after { display: none; }
-.tile-grid .tile:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
+a.tile::before, a.tile::after { display: none !important; }
+a.tile:hover { border-color: #3b82f6 !important; transform: translateY(-4px); }
+a.tile > img {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10 !important;
+    object-fit: cover !important;
+    filter: none !important;
+    transform: none !important;
+    background: #000 !important;
+    border-bottom: 1px solid #1d1e24 !important;
 }
-.tile-grid .tile img {
-    position: static;
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    filter: none;
-    transform: none;
-    background: #000;
-    border-bottom: 1px solid #1d1e24;
+a.tile .tile-overlay {
+    position: static !important;
+    inset: auto !important;
+    background: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    padding: 18px 20px 22px !important;
 }
-.tile-grid .tile-overlay {
-    position: static;
-    inset: auto;
-    background: none;
-    opacity: 1;
-    transform: none;
-    padding: 18px 20px 22px;
-}
-.tile-grid .tile-overlay p { color: var(--text-secondary); }
+a.tile .tile-overlay p { color: #94a3b8 !important; }
 
-/* ===== Featured panels: no background images for now ===== */
-.panel .bg-media { display: none; }
+/* Featured panels: no background images for now */
+.panel .bg-media, .panel > img { display: none !important; }
