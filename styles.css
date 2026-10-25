@@ -1257,3 +1257,11 @@ tbody tr:hover td {
         transform: none;
     }
 }
+
+.hero-full .bg-media {
+    filter: brightness(0.7);
+}
+
+.hero-full::before {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.85) 100%);
+}
