@@ -1337,11 +1337,11 @@ tbody tr:hover td {
 
 /* ---------- Wide wordmark logo ---------- */
 .logo {
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
+    font-family: 'Oxanium', var(--font-sans);
+    font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.32em;
+    letter-spacing: 0.22em;
     color: var(--accent);
     transition: color 0.2s var(--ease);
 }
