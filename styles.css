@@ -1342,4 +1342,10 @@ tbody tr:hover td {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.32em;
+    color: var(--accent);
+    transition: color 0.2s var(--ease);
+}
+
+.logo:hover {
+    color: var(--accent-hover);
 }
